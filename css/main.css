@@ -1220,6 +1220,10 @@ button:hover {
     text-align: center;
   }
 
+  .erna-reverse-mobile {
+    flex-direction: column-reverse !important;
+  }
+
   .erna-hero-section .column {
     flex: none;
     width: 100%;
