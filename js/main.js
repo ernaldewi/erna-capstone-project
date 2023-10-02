@@ -151,10 +151,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = emailInput.value;
 
     // Validasi password dan konfirmasi password
-    if (password !== confirmPassword) {
-      alert("Password dan konfirmasi password tidak cocok.");
-      return;
-    }
+    // if (password !== confirmPassword) {
+    //   alert("Password dan konfirmasi password tidak cocok.");
+    //   return;
+    // }
 
     // Validasi panjang minimal password (minimal 8 karakter)
     if (password.length < 8) {
@@ -163,13 +163,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Validasi penggunaan karakter khusus dalam password
-    if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+    if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password) < 0) {
       alert("Password harus mengandung setidaknya satu karakter khusus.");
       return;
     }
 
     // Validasi penggunaan huruf besar (uppercase) dalam password
-    if (!/[A-Z]/.test(password)) {
+    if (!/[A-Z]/.test(password) < 0) {
       alert(
         "Password harus mengandung setidaknya satu huruf besar (uppercase)."
       );
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Validasi penggunaan huruf kecil (lowercase) dalam password
-    if (!/[a-z]/.test(password)) {
+    if (!/[a-z]/.test(password) < 0) {
       alert(
         "Password harus mengandung setidaknya satu huruf kecil (lowercase)."
       );
@@ -187,13 +187,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Lakukan pendaftaran pengguna atau kirim data ke server sesuai logika aplikasi Anda
     alert("Registrasi berhasil!");
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("login-form");
+  const emailInput = document.getElementById("form-email");
+  const passwordInput = document.getElementById("password");
 
   loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const username = usernameInput.value;
-    const password = passwordInput.value;
     const email = emailInput.value;
+    const password = passwordInput.value;
 
     alert("Login Berhasil");
   });
