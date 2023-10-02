@@ -136,11 +136,13 @@ window.addEventListener("load", populateDoctorList);
 // Punya Ara
 
 document.addEventListener("DOMContentLoaded", function () {
-  const registrationForm = document.getElementById(".register-container");
+  const registrationForm = document.getElementById("register-form");
   const usernameInput = document.getElementById("username");
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
+  const loginForm = document.getElementById("login-form");
 
+  // Registration Form
   registrationForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -184,5 +186,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Lakukan pendaftaran pengguna atau kirim data ke server sesuai logika aplikasi Anda
     alert("Registrasi berhasil!");
+  });
+
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+    const email = emailInput.value;
+
+    alert("Login Berhasil");
   });
 });

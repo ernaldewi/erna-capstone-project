@@ -1381,6 +1381,12 @@ button:hover {
   .container-list-jadwal {
     font-size: 1.2rem;
   }
+
+  .main {
+    width: auto;
+    margin: 20px 20px;
+    border-radius: 25px;
+  }
 }
 
 /* Mobile */

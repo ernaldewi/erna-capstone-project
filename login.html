@@ -36,34 +36,44 @@
 
     <!-- Konten Start -->
     <div class="main">
-      <div class="konten">
+      <div class="login-container" id="login-form">
         <h2>Login to My Account</h2>
         <img src="assets/img/login.png" />
-      </div>
 
-      <form action="#" method="post" class="loginForm" autocomplete="off">
-        <div class="form-group">
-          <label for="email" id="form-email">Email</label>
-          <input
-            type="email"
-            id="form-email"
-            name="email"
-            placeholder="Enter Email"
-            required
-            autofocus
-          />
-        </div>
-        <button type="submit">Login</button>
-        <a href="#">
-          <legend id="forgot-pass">Forgot Password?</legend>
-        </a>
-        <button type="submit" id="submit-btn" name="submit">
-          <a href="register.html">Create Account</a>
-        </button>
-      </form>
-      <p id="login-message" class="error-message"></p>
+        <form action="#" method="post" class="loginForm" autocomplete="off">
+          <div class="form-group">
+            <label for="email" id="form-email">Email</label>
+            <input
+              type="email"
+              id="form-email"
+              name="email"
+              placeholder="Enter Email"
+              required
+              autofocus
+            />
+          </div>
+          <div class="form-group">
+            <label for="password" id="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter Password"
+              required
+              minlength="8"
+            />
+          </div>
+          <button type="submit">Login</button>
+          <a href="#">
+            <legend id="forgot-pass">Forgot Password?</legend>
+          </a>
+          <button type="submit" id="submit-btn" name="submit">
+            <a href="register.html">Create Account</a>
+          </button>
+        </form>
+        <p id="login-message" class="error-message"></p>
+      </div>
     </div>
-    <script src="./js/java.js"></script>
     <!-- Konten End -->
 
     <!-- start of footer -->
