@@ -135,9 +135,11 @@ window.addEventListener("load", populateDoctorList);
 
 // Punya Ara
 
+// Registration Form
 document.addEventListener("DOMContentLoaded", function () {
   const registrationForm = document.getElementById("register-form");
   const usernameInput = document.getElementById("username");
+  const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const loginForm = document.getElementById("login-form");
@@ -147,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     const username = usernameInput.value;
+    const name = nameInput.value;
     const password = passwordInput.value;
     const email = emailInput.value;
 
@@ -185,10 +188,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Lakukan pendaftaran pengguna atau kirim data ke server sesuai logika aplikasi Anda
-    alert("Registrasi berhasil!");
+    fetch("http://localhost:4000/api/patient", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        name: name,
+        email: email,
+        password: password,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Registrasi berhasil");
+        } else {
+          alert("Registrasi gagal");
+        }
+      })
+      .catch((error) => {
+        alert(`Terdapat error: ${error.message}`);
+      });
   });
 });
 
+// Login Form
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("login-form");
   const emailInput = document.getElementById("form-email");
